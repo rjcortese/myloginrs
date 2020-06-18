@@ -1,13 +1,21 @@
 [package]
 name = "myloginrs"
 version = "0.1.0"
-authors = ["James Cortese <James_Cortese@comcast.com>"]
+authors = ["James Cortese <rjcortese@gmail.com>"]
 edition = "2018"
+description = "Read and parse MySQL's .mylogin.cnf file."
+readme = "README.md"
+repository = "https://github.com/rjcortese/myloginrs"
+license = "MIT"
+keywords = ["mysql", "mylogin", "mysql_config_editor"]
+categories = ["authentication", "command-line-interface", "config", "filesystem"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[badges]
+travis-ci = { repository = "rjcortese/myloginrs", branch = "master" }
+maintenance = { status = "actively-developed" }
+
 
 [dependencies]
 shellexpand = "2.0.0"
 openssl = "0.10.29"
 rust-ini = "0.15.2"
-bincode = "1.2.1"
