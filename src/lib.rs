@@ -29,7 +29,8 @@ const CIPHER_STORE_LENGTH: usize = 4;
 const AES_BLOCK_SIZE: usize = 16;
 
 
-
+/// Read the file at path and decrypt it.
+/// Return the contents as a String.
 pub fn read(path: Option<&Path>) -> String {
     let path = match path {
         Some(p) => PathBuf::from(p),
@@ -44,6 +45,9 @@ pub fn read(path: Option<&Path>) -> String {
 }
 
 
+/// Parse the file at path, decrypting it and
+/// return a HashMap containing the key value pairs
+/// for the login_path heading.
 pub fn parse(login_path: &str, path: Option<&Path>) -> HashMap<String, String> {
     let decrypt_file = read(path);
     let conf = Ini::load_from_str(&decrypt_file).unwrap();
@@ -123,35 +127,30 @@ fn read_encrypted_file(encrypted: &mut Vec<u8>) -> Vec<u8> {
     plaintext
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    // #[cfg(windows)]
+    // #[test]
+    // fn test_get_default_path_windows() {
+    //     get_default_path()
+    // }
+    //
+    // #![cfg(windows)]
+    // #[test]
+    // fn test_get_default_path_non_windows() {
+    //     get_default_path()
+    // }
 
     #[test]
-    fn test_read() {
-        let file_path = PathBuf::from("test/test_mylogin.cnf");
-        let output_str = "[client]\n\
-            user = localuser\n\
-            password = abc123\n\
-            host = localhost\n\
-            port = 1234\n";
-        
-        assert_eq!(read(Some(&file_path)), String::from(output_str));
+    fn test_get_login_path_file_from_env() {
+        env::set_var("MYSQL_LOGIN_FILE", "my_file_path");
+        let path = get_login_path_file();
+        assert_eq!(PathBuf::from("my_file_path"), path);
     }
-    
-    #[test]
-    fn test_parse() {
-        let login_path = "client";
-        let file_path = PathBuf::from("test/test_mylogin.cnf");
-        let output_map: HashMap<String, String> = vec![
-            (String::from("user"), String::from("localuser")),
-            (String::from("password"), String::from("abc123")),
-            (String::from("host"), String::from("localhost")),
-            (String::from("port"), String::from("1234"))
-        ].into_iter().collect();
 
-        assert_eq!(parse(login_path, Some(&file_path)), output_map);
-    }
+    // #[test]
+    // fn test_get_login_path_file_default() {
+    // }
 }

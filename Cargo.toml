@@ -9,6 +9,9 @@ repository = "https://github.com/rjcortese/myloginrs"
 license = "MIT"
 keywords = ["mysql", "mylogin", "mysql_config_editor"]
 categories = ["authentication", "command-line-interface", "config", "filesystem"]
+exclude = [
+    "/.travis.yml"    
+]
 
 [badges]
 travis-ci = { repository = "rjcortese/myloginrs", branch = "master" }
