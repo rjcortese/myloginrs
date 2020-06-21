@@ -20,15 +20,24 @@ myloginrs = "0.1"
 To get a HashMap of login info for `"client"` just use the parse function:
 
 ```rust
-let client_info = myloginrs::parse("client", None);
+let file_path = PathBuf::from(
+    "tests/test_mylogin.cnf",
+);
 
-let mut opts = OptsBuilder::new();
-opts.ip_or_hostname(Some(opts.host));
-opts.tcp_port(opts.port);
-opts.user(Some(opts.user));
-opts.pass(Some(opts.pass));
+let client_info = myloginrs::parse("client", Some(&file_path));
+```
 
-let conn = Conn::new(opts)?;
+Then you can use that HashMap with an `OptsBuilder` or other structs
+from the [mysql](https://crates.io/crates/mysql):
+
+```rust
+let opts = OptsBuilder::new()
+    .ip_or_hostname(Some(&client_info["host"]))
+    .tcp_port(u16::from_str_radix(&client_info["port"], 10)?)
+    .user(Some(&client_info["user"]))
+    .pass(Some(&client_info["password"]));
+
+let _conn = Conn::new(opts);
 ```
 
 If you would rather get a String that contains the whole file,
@@ -40,7 +49,7 @@ let mylogin_plaintext = myloginrs::read(None);
 println!("{}", mylogin_plaintext);
 ```
 
-Both of these examples pass `None` as the path to use the
+This second example passes `None` as the path to use the
 default .mylogin.cnf location (`%APPDATA%\MySQL\.mylogin.cnf` on windows or 
 `~/.mylogin.cnf` on everything else).
 

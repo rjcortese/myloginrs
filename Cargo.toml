@@ -22,3 +22,6 @@ maintenance = { status = "actively-developed" }
 shellexpand = "2.0.0"
 openssl = "0.10.29"
 rust-ini = "0.15.2"
+
+[dev-dependencies]
+mysql = "18.0.0"
