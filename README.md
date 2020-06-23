@@ -1,5 +1,5 @@
 # myloginrs
-[![Build Status](https://travis-ci.com/rjcortese/myloginrs.svg?branch=master)](https://travis-ci.com/rjcortese/myloginrs)
+![](https://github.com/rjcortese/myloginrs/workflows/ci/badge.svg)
 [![](http://meritbadge.herokuapp.com/myloginrs)](https://crates.io/crates/myloginrs)
 
 Read and parse MySQL's

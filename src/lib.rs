@@ -131,17 +131,22 @@ fn read_encrypted_file(encrypted: &mut Vec<u8>) -> Vec<u8> {
 mod tests {
     use super::*;
 
-    // #[cfg(windows)]
-    // #[test]
-    // fn test_get_default_path_windows() {
-    //     get_default_path()
-    // }
-    //
-    // #![cfg(windows)]
-    // #[test]
-    // fn test_get_default_path_non_windows() {
-    //     get_default_path()
-    // }
+     #[cfg(target_os = "windows")]
+     #[test]
+     fn test_get_default_path_windows() {
+         let string = get_default_path();
+
+         let mylogin_root = env::var("APPDATA").expect("env var 'APPDATA' is not set");
+         let mylogin_path = [&mylogin_root, "MySQL", ".mylogin.cnf"].concat();
+         assert_eq!(mylogin_path, string);
+     }
+    
+     #[cfg(not(target_os = "windows"))]
+     #[test]
+     fn test_get_default_path_not_windows() {
+         let string = get_default_path();
+         assert_eq!(String::from(shellexpand::tilde("~/.mylogin.cnf")), string);
+     }
 
     #[test]
     fn test_get_login_path_file_from_env() {
@@ -149,8 +154,4 @@ mod tests {
         let path = get_login_path_file();
         assert_eq!(PathBuf::from("my_file_path"), path);
     }
-
-    // #[test]
-    // fn test_get_login_path_file_default() {
-    // }
 }
