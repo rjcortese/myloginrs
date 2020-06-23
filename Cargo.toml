@@ -10,11 +10,10 @@ license = "MIT"
 keywords = ["mysql", "mylogin", "mysql_config_editor"]
 categories = ["authentication", "command-line-interface", "config", "filesystem"]
 exclude = [
-    "/.travis.yml"    
+    "/.github/*"    
 ]
 
 [badges]
-travis-ci = { repository = "rjcortese/myloginrs", branch = "master" }
 maintenance = { status = "actively-developed" }
 
 
