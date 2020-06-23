@@ -1,6 +1,6 @@
 # myloginrs
-![Build Status](https://github.com/rjcortese/myloginrs/workflows/.github/workflows/ci.yml/badge.svg)
-[![](http://meritbadge.herokuapp.com/myloginrs)](https://crates.io/crates/myloginrs)
+[![Build status](https://img.shields.io/github/workflow/status/rjcortese/myloginrs/ci)](https://github.com/rjcortese/myloginrs/actions)
+[![](https://img.shields.io/crates/v/myloginrs)](https://crates.io/crates/myloginrs)
 
 Read and parse MySQL's
 [.mylogin.cnf](https://dev.mysql.com/doc/refman/5.7/en/mysql-config-editor.html)
