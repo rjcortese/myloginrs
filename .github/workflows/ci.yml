@@ -53,7 +53,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install OpenSSL
-        run: C:\msys64\pacman -S mingw-w64-x86_64-openssl
+        run: pacman -S mingw-w64-x86_64-openssl
       - name: Build
         run: cargo build --verbose
       - name: Run tests
