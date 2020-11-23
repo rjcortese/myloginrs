@@ -1,21 +1,19 @@
 [package]
 name = "myloginrs"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["James Cortese <rjcortese@gmail.com>"]
 edition = "2018"
 description = "Read and parse MySQL's .mylogin.cnf file."
 readme = "README.md"
 repository = "https://github.com/rjcortese/myloginrs"
-license = "MIT"
+documentation = "https://docs.rs/myloginrs"
+license = "MIT/Apache-2.0"
 keywords = ["mysql", "mylogin", "mysql_config_editor"]
 categories = ["authentication", "command-line-interface", "config", "filesystem"]
-exclude = [
-    "/.github/*"    
-]
+exclude = ["tests/*", ".*"]
 
 [badges]
-maintenance = { status = "actively-developed" }
-
+maintenance = { status = "passively-maintained" }
 
 [dependencies]
 shellexpand = "2.0.0"
@@ -23,4 +21,4 @@ openssl = "0.10.29"
 rust-ini = "0.15.2"
 
 [dev-dependencies]
-mysql = "18.0.0"
+mysql = "20.1.0"

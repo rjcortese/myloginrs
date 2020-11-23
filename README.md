@@ -1,13 +1,13 @@
 # myloginrs
 [![Build status](https://img.shields.io/github/workflow/status/rjcortese/myloginrs/ci)](https://github.com/rjcortese/myloginrs/actions)
 [![](https://img.shields.io/crates/v/myloginrs)](https://crates.io/crates/myloginrs)
+![Maintenance](https://img.shields.io/badge/maintenance-activly--developed-brightgreen.svg)
 
 Read and parse MySQL's
 [.mylogin.cnf](https://dev.mysql.com/doc/refman/5.7/en/mysql-config-editor.html)
 file.
 
-### Usage
-
+## Installation
 Add `myloginrs` to `Cargo.toml`:
 
 ```toml
@@ -15,7 +15,8 @@ Add `myloginrs` to `Cargo.toml`:
 myloginrs = "0.1"
 ```
 
-### Example
+
+## Examples
 
 To get a HashMap of login info for `"client"` just use the parse function:
 
@@ -40,6 +41,14 @@ let opts = OptsBuilder::new()
 let _conn = Conn::new(opts);
 ```
 
+Starting with [mysql 20.1.0](https://crates.io/crates/mysql/20.1.0),
+you can do the even simpler:
+
+```rust
+let opts = OptsBuilder::new().from_hash_map(&client_info).unwrap();
+let _conn = Conn::new(opts);
+```
+
 If you would rather get a String that contains the whole file,
 use read:
 
@@ -50,14 +59,34 @@ println!("{}", mylogin_plaintext);
 ```
 
 This second example passes `None` as the path to use the
-default .mylogin.cnf location (`%APPDATA%\MySQL\.mylogin.cnf` on windows or 
+default .mylogin.cnf location (`%APPDATA%\MySQL\.mylogin.cnf` on windows or
 `~/.mylogin.cnf` on everything else).
 
-## other stuff
+
+## Other Stuff
+
 Thanks to
  * [github.com/PyMySQL](https://github.com/PyMySQL/myloginpath)
 and
  * [github.com/ocelot-inc](https://github.com/ocelot-inc/ocelotgui/blob/master/readmylogin.c)
 for doing all the hard work and from whom I port.
 
+
+## License
+
+Licensed under either of
+
+* Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or https://www.apache.org/licenses/LICENSE-2.0)
+* MIT license ([LICENSE-MIT](LICENSE-MIT) or https://opensource.org/licenses/MIT)
+
+at your option.
+
+
+### Contribution
+
 Pull requests welcome. :)
+
+Unless you explicitly state otherwise, any contribution intentionally
+submitted for inclusion in the work by you, as defined in the Apache-2.0
+license, shall be dual licensed as above, without any additional terms or
+conditions.
