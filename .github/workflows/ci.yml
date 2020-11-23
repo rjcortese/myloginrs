@@ -45,8 +45,6 @@ jobs:
   test-windows:
     name: test-windows
     runs-on: ${{ matrix.os }}
-    env:
-      OPENSSL_DIR: C:\Program Files\OpenSSL
     strategy:
       matrix:
         os:
@@ -54,6 +52,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Install OpenSSL
+        run: C:\msys64\pacman -S mingw-w64-x86_64-openssl
       - name: Build
         run: cargo build --verbose
       - name: Run tests
