@@ -56,7 +56,7 @@ jobs:
         run: vcpkg install openssl:x64-windows
       - name: Build
         env:
-          VCPKG_ROOT: C:\src\vcpkg
+          VCPKG_ROOT: C:/vcpkg
         run: cargo build --verbose
       - name: Run tests
         run: cargo test --verbose
