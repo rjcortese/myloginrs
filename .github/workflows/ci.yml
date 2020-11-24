@@ -53,7 +53,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install OpenSSL
-        run: vcpkg install openssl:x64-windows
+        run: vcpkg install openssl:x64-windows-static-md
       - name: Build
         env:
           VCPKG_ROOT: C:/vcpkg
