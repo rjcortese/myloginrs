@@ -2,7 +2,7 @@
 name = "myloginrs"
 version = "0.1.2"
 authors = ["James Cortese <rjcortese@gmail.com>"]
-edition = "2018"
+edition = "2021"
 description = "Read and parse MySQL's .mylogin.cnf file."
 readme = "README.md"
 repository = "https://github.com/rjcortese/myloginrs"
