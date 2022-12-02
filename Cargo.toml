@@ -16,7 +16,7 @@ exclude = ["tests/*", ".*"]
 maintenance = { status = "passively-maintained" }
 
 [dependencies]
-shellexpand = "2.0.0"
+shellexpand = "3.0.0"
 openssl = "0.10.29"
 rust-ini = "0.18.0"
 
