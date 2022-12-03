@@ -1,6 +1,6 @@
 [package]
 name = "myloginrs"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["James Cortese <rjcortese@gmail.com>"]
 edition = "2021"
 description = "Read and parse MySQL's .mylogin.cnf file."
