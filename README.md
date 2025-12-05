@@ -1,7 +1,8 @@
 # myloginrs
-[![Build status](https://img.shields.io/github/workflow/status/rjcortese/myloginrs/ci)](https://github.com/rjcortese/myloginrs/actions)
+[![Build status](https://img.shields.io/github/actions/workflow/status/rjcortese/myloginrs/ci.yml?branch=master)](https://github.com/rjcortese/myloginrs/actions)
 [![](https://img.shields.io/crates/v/myloginrs)](https://crates.io/crates/myloginrs)
 ![Maintenance](https://img.shields.io/badge/maintenance-passively--maintained-yellowgreen.svg)
+
 
 Read and parse MySQL's
 [.mylogin.cnf](https://dev.mysql.com/doc/refman/5.7/en/mysql-config-editor.html)

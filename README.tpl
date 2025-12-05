@@ -1,7 +1,8 @@
 # {{crate}}
-[![Build status](https://img.shields.io/github/workflow/status/rjcortese/myloginrs/ci)](https://github.com/rjcortese/myloginrs/actions)
+[![Build status](https://img.shields.io/github/actions/workflow/status/rjcortese/myloginrs/ci.yml?branch=master)](https://github.com/rjcortese/myloginrs/actions)
 [![](https://img.shields.io/crates/v/myloginrs)](https://crates.io/crates/myloginrs)
 {{badges}}
+
 
 {{readme}}
 
