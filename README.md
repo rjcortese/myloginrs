@@ -13,7 +13,7 @@ Add `myloginrs` to `Cargo.toml`:
 
 ```toml
 [dependencies]
-myloginrs = "0.1"
+myloginrs = "0.2"
 ```
 
 
