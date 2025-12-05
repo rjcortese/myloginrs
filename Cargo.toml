@@ -1,8 +1,9 @@
 [package]
 name = "myloginrs"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["James Cortese <rjcortese@gmail.com>"]
 edition = "2021"
+rust-version = "1.89"
 description = "Read and parse MySQL's .mylogin.cnf file."
 readme = "README.md"
 repository = "https://github.com/rjcortese/myloginrs"
@@ -16,9 +17,9 @@ exclude = ["tests/*", ".*"]
 maintenance = { status = "passively-maintained" }
 
 [dependencies]
-shellexpand = "3.0.0"
-openssl = "0.10.29"
-rust-ini = "0.18.0"
+shellexpand = "3.1.1"
+openssl = "0.10.75"
+rust-ini = "0.21.3"
 
 [dev-dependencies]
-mysql = "23.0.0"
+mysql = "26.0.1"
