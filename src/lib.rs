@@ -218,7 +218,9 @@ mod tests {
 
     #[test]
     fn test_get_login_path_file_from_env() {
-        env::set_var("MYSQL_LOGIN_FILE", "my_file_path");
+        unsafe {
+            env::set_var("MYSQL_LOGIN_FILE", "my_file_path");
+        }
         let path = get_login_path_file();
         assert_eq!(PathBuf::from("my_file_path"), path);
     }

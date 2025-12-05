@@ -1,8 +1,8 @@
 [package]
 name = "myloginrs"
-version = "0.1.6"
+version = "0.2.0"
 authors = ["James Cortese <rjcortese@gmail.com>"]
-edition = "2021"
+edition = "2024"
 rust-version = "1.89"
 description = "Read and parse MySQL's .mylogin.cnf file."
 readme = "README.md"
