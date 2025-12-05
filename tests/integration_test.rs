@@ -1,5 +1,5 @@
-use std::path::PathBuf;
 use std::collections::HashMap;
+use std::path::PathBuf;
 
 #[test]
 fn test_read() {
@@ -9,7 +9,7 @@ fn test_read() {
         password = abc123\n\
         host = localhost\n\
         port = 1234\n";
-    
+
     assert_eq!(myloginrs::read(Some(&file_path)), String::from(output_str));
 }
 
@@ -21,8 +21,10 @@ fn test_parse() {
         (String::from("user"), String::from("localuser")),
         (String::from("password"), String::from("abc123")),
         (String::from("host"), String::from("localhost")),
-        (String::from("port"), String::from("1234"))
-    ].into_iter().collect();
+        (String::from("port"), String::from("1234")),
+    ]
+    .into_iter()
+    .collect();
 
     assert_eq!(myloginrs::parse(login_path, Some(&file_path)), output_map);
 }
