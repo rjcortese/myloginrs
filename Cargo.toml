@@ -22,4 +22,4 @@ openssl = "0.10.75"
 rust-ini = "0.21.3"
 
 [dev-dependencies]
-mysql = "26.0.1"
+mysql = "27.0.0"
